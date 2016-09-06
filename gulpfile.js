@@ -41,7 +41,8 @@ gulp.task("pug", function() {
 	.pipe(browser.reload({stream:true}));
 });
 gulp.task("js", function() {
-    gulp.src(["src/js/**/*.js","!src/js/min/**/*.js"])
-        .pipe(uglify())
-        .pipe(gulp.dest("./public/js"));
+	gulp.src(["src/js/**/*.js","!src/js/min/**/*.js"])
+	.pipe(plumber())
+	.pipe(uglify())
+	.pipe(gulp.dest("./public/js"));
 });
