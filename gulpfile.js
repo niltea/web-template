@@ -33,7 +33,7 @@ gulp.task("sass", function() {
 });
 gulp.task("pug", function() {
 	gulp.src(
-		["src/pug/**/*.pug", "!pug/**/_*.pug"]
+		["src/pug/**/*.pug", "!src/pug/**/_*.pug"]
 		)
 	.pipe(plumber())
 	.pipe(pug({},{"ext": ".html"}))
