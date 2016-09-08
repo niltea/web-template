@@ -36,7 +36,9 @@ gulp.task("pug", function() {
 		["src/pug/**/*.pug", "!src/pug/**/_*.pug"]
 		)
 	.pipe(plumber())
-	.pipe(pug({},{"ext": ".html"}))
+	.pipe(pug({
+		pretty: true
+	},{"ext": ".html"}))
 	.pipe(gulp.dest("./public/"))
 	.pipe(browser.reload({stream:true}));
 });
