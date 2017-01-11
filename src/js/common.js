@@ -1,2 +1,3 @@
-(function(window, $){
-}(this, this.jQuery));
+"use strict";
+(function($){
+}(jQuery));

@@ -2,35 +2,14 @@
 base settings
 ========================================================================== */
 body {
-	background-color: #000;
-	color: #fff;
-	transition: opacity 0.6s 0.4s;
-	opacity: 1;
-	&.fade {
-		opacity: 0;
-	}
+	background-color: #fff;
+	color: #000;
 }
 #wrapper {
 	min-width: 1000px;
 	width: 100%;
-	height: 100%;
-	position: absolute;
+	position: relative;
 }
-
-#background {
-	position: absolute;
-	left: 0;
-	top: 0;
-	width: 100%;
-	height: 100%;
-	min-width: 1000px;
-	#background_main {
-		width: 100%;
-		height: 1700px;
-		background: url('../img/top/bg_main_pc.jpg') center top no-repeat;
-	}
-}
-
 #content {
 	padding-top: 14px;
 }
