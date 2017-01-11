@@ -1,2 +1,5 @@
 @charset "UTF-8";
-@import "reset.scss";
+@import "include/mixin.scss";
+@import "include/reset.scss";
+@import "include/pc.scss";
+@import "include/sp.scss";

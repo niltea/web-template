@@ -1,6 +1,11 @@
 extends include/_header
 block title
-	title test
+	title _title_
 block body
 	div#wrapper
-		div#content
+		section#background
+		section#content
+
+block script
+	//- script(src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js")
+	script(src='/js/top.js')

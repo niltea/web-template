@@ -3,6 +3,7 @@ var sass = require("gulp-sass");
 var autoprefixer = require("gulp-autoprefixer");
 var browser = require("browser-sync");
 var plumber = require("gulp-plumber");
+var babel = require("gulp-babel");
 var pug = require("gulp-pug");
 var uglify = require("gulp-uglify");
 
@@ -46,6 +47,7 @@ gulp.task("pug", function() {
 gulp.task("js", function() {
 	gulp.src(["src/js/**/*.js","!src/js/min/**/*.js"])
 	.pipe(plumber())
+    .pipe(babel())
 	.pipe(uglify())
 	.pipe(gulp.dest("./public/js"));
 });

@@ -1,0 +1,331 @@
+/* =======================================================================
+base settings
+========================================================================== */
+#wrapper.sp {
+	min-width: 0;
+	width: 640px;
+}
+
+.sp #background {
+	min-width: 0;
+	width: 640px;
+	#background_main {
+		width: 100%;
+		height: 960px;
+		background: url('../img/top/bg_main_sp_2x.jpg') center top no-repeat;
+		background-size: 100% auto;
+	}
+}
+
+.sp #content {
+	width: 640px;
+	padding-top: 0;
+}
+/* =======================================================================
+staff list
+========================================================================== */
+.sp .staffList {
+	position: relative;
+	left: auto;
+	padding: 26px 0 0 11px;
+	display: block;
+	width: 334px;
+	height: 696px;
+	margin: 0 auto;
+	box-sizing: border-box;
+	.staffList_item {
+		height: 150px;
+		@include txtHide;
+		background: 0 0 no-repeat;
+		float: left;
+	}
+	.staffList_copyright { display: none; }
+	.staffList_production {
+		background-image: url('../img/top/staffList_production_sp_2x.png');
+		background-size: 100%;
+		width: 46px;
+		margin: 0 40px 0 0;
+	}
+	.staffList_music {
+		background-image: url('../img/top/staffList_music_sp_2x.png');
+		background-size: 100%;
+		width: 44px;
+		margin: 0 33px 0 0;
+	}
+	.staffList_director {
+		background-image: url('../img/top/staffList_director_sp_2x.png');
+		background-size: 100%;
+		width: 43px;
+		margin: 0;
+		margin: 0 36px 0 0;
+	}
+	.staffList_origin {
+		background-image: url('../img/top/staffList_origin_sp_2x.png');
+		background-size: 100%;
+		width: 81px;
+		margin: 0;
+	}
+}
+
+/* =======================================================================
+on air
+========================================================================== */
+.sp .ontheAir {
+	position: relative;
+	width: 100%;
+	.ontheAir_item {
+		background: 0 0 no-repeat;
+		width: 82px;
+		height: 680px;
+		@include txtHide;
+		position: absolute;
+		top: 0;
+	}
+	.ontheAir_right {
+		background-image: url('../img/top/ontheAir_right_sp_2x.png');
+		background-size: 100%;
+		right: 0;
+	}
+	.ontheAir_left {
+		background-image: url('../img/top/ontheAir_left_sp_2x.png');
+		background-size: 100%;
+		left: 0;
+	}
+}
+
+// .sp .bg_mask {
+// 	width: 640px;
+// 	.bg_mask_item {
+// 		position: absolute;
+// 	}
+// 	.bg_mask_sou { display: none; }
+// 	.bg_mask_year_0 {
+// 		background-image: url('../img/top/bg_mask_year_0_sp_2x.png');
+// 		background-size: 100%;
+// 		width: 63px;
+// 		height: 85px;
+// 		left: 560px;
+// 		top: 163px;
+// 	}
+// 	.bg_mask_year_7 { display: none; }
+// }
+
+/* =======================================================================
+bottom Logo
+========================================================================== */
+.sp .bottomLogo {
+	padding: 0;
+	.bottomLogo_mainLogo {
+		background-image: url('../img/top/bottomLogo_mainLogo_sp_2x.png');
+		background-size: 480px 140px;
+		margin: 0 auto 20px;
+		width: 480px;
+		height: 140px;
+	}
+	.bottomLogo_onTheAir {
+		background-image: url('../img/top/bottomLogo_onTheAir_sp_2x.png');
+		background-size: 280px 22px;
+		margin: 16px auto 0;
+		width: 280px;
+		height: 22px;
+	}
+}
+.sp .mainFooter {
+	display: block;
+	height: auto;
+	padding: 10px 0 52px;
+	.footer_copyright {
+		@include txtHide;
+		background-image: url('../img/top/bottomLogo_copyright_sp_2x.png');
+		background-size: 100%;
+		margin: 0 auto 40px;
+		width: 335px;
+		height: 14px;
+	}
+}
+
+/* =======================================================================
+footer Nav
+========================================================================== */
+
+/* ---------------------
+Navigation
+--------------------- */
+.sp #nav_wrap {
+	// inner.height - 20
+	// bottom: -355px;
+	transform: translateY(445px);
+	// bottom: 0;
+	min-width: 0;
+	width: 640px;
+	height: auto;
+	&.shown {
+		transform: translateY(0);
+	}
+}
+.sp #nav_btn {
+	width: 120px;
+	height: 60px;
+	position: relative;
+	bottom: -1px;
+}
+.sp #nav_inner {
+	height: auto;
+	padding: 0 4.5%;
+	ul {
+		width: auto;
+		margin: 0 auto;
+		padding: 35px 0 50px;
+		height: 115px;
+		box-sizing: content-box;
+		display: flex;
+		justify-content: space-between;
+		flex-wrap : wrap;
+		li {
+			float: none;
+			text-align: center;
+			background: 0 0 no-repeat;
+			&.nav_title {
+				background-image: url('../img/common/footer/menu_title_sp_2x.png');
+				width: 131px;
+				height: 66px;
+				background-size: 100%;
+				margin: 0 0 0;
+			}
+			&.nav_home {
+				background-image: url('../img/common/menu_01.png');
+				width: 32%;
+				background-size: 100%;
+				height: 114px;
+				margin: 0;
+			}
+			&.nav_news {
+				background-image: url('../img/common/menu_02.png');
+				background-size: 100%;
+				width: 174px;
+				height: 114px;
+				margin: 0;
+			}
+			a {
+				display: block;
+				width: 100%;
+				height: 100%;
+				color: #231815;
+				text-align: center;
+			}
+		}
+	}
+	.btn_tw {
+		width: 242px;
+		margin: 20px auto 0;
+		img {
+			width: 242px;
+		}
+	}
+}
+.sp .pc-only { display: none !important; }
+.pc .sp-only { display: none !important; }
+/* ---------------------
+Footer
+--------------------- */
+.sp footer {
+	height: 130px;
+	padding-bottom: 45px;
+}
+.sp ul#share_wrap {
+	width: 375px;
+	height: auto;
+	margin: 0 auto;
+	padding: 0;
+	display: block;
+	li {
+		float: left;
+		display: block;
+		width: 80px;
+		height: 80px;
+		margin-right: 55px;
+		padding: 0;
+		&.title {
+			width: 350px;
+			height: 25px;
+			margin: 4px 0 15px;
+		}
+		&:last-child {
+			margin-right: 0;
+		}
+		a {
+			display: block;
+			width: 100%;
+			height: 100%;
+		}
+	}
+}
+
+
+/* =======================================================================
+loader
+========================================================================== */
+.loader.sp {
+	width: 640px;
+	.loader-mask {
+		background: url('../img/common/loader/mask_intro_sp.png') 0 0 repeat;
+		background-size: 208px 208px;
+	}
+	.loader-logo {
+		width: 480px;
+		height: 140px;
+		opacity: 0;
+		background: url("../img/top/bottomLogo_mainLogo_sp_2x.png") 0 0 no-repeat;
+		background-size: 100%;
+		.logo-elm {display: none;}
+	}
+}
+
+.sp #movie {
+	margin-top: 176px;
+	padding-bottom: 27px;
+	background: url('../img/top/movie/movie-bg-sp_2x.jpg') center top no-repeat;
+	background-size: 100%;
+	.line {
+		height: 97px;
+		margin: -123px auto 0;
+	}
+	h2.movie_head_title {
+		background: url('../img/top/movie/movie_title-sp_2x.png') center center no-repeat;
+		background-size: 100%;
+		width: 350px;
+		height: 90px;
+		margin: 42px auto 46px;
+	}
+	.movie_container {
+		width: 580px;
+	}
+	.movie-item {
+		float: none;
+		width: 580px;
+		height: auto;
+		margin-bottom: 56px;
+		// position: relative;
+		&:nth-child(2n+1) {
+			margin-right: 0;
+		}
+		.thumb {
+			width: 580px;
+			height: 311px;
+			img {
+				width: 100%;
+			}
+			&:after {
+				background: url('../img/top/movie/movie_thumb-icon-sp_2x.png') center center no-repeat;
+				background-size: 100%;
+			}
+		}
+		.title {
+			margin-top: 22px;
+			text-align: center;
+			img {
+				width: 360px;
+			}
+		}
+	}
+}

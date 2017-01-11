@@ -1,0 +1,80 @@
+/*clearfix*/
+@mixin clearfix {
+	zoom: 1;
+	&:after {
+		content: "";
+		clear: both;
+		display: block;
+	}
+}
+.clearfix {
+	@include clearfix;
+}
+
+// position: absolute
+@mixin abs($opt_left:0,$opt_top:0,$opt_depth:0, $opt_lr:left, $opt_tb:top){
+	position: absolute;
+	$opt_lr: ($opt_left)px;
+	$opt_tb: ($opt_top)px;
+	z-index: $opt_depth;
+}
+
+// position: absolute + centering
+@mixin abs50($opt_margin:0,$opt_top:0,$opt_depth:0){
+	position: absolute;
+	left: 50%;
+	top: #{$opt_top}px;
+	margin-left: #{$opt_margin}px;
+	z-index: $opt_depth;
+}
+
+// position: fix
+@mixin fix($opt_left:0,$opt_top:0,$opt_depth:0, $opt_lr:left, $opt_tb:top){
+	position: fixed;
+	#{$opt_lr}: #{$opt_left}px;
+	#{$opt_tb}: #{$opt_top}px;
+	z-index: $opt_depth;
+}
+
+// オブジェクトのサイズ
+@mixin size($opt_w:0,$opt_h:0){
+	width: #{$opt_w}px;
+	height: #{$opt_h}px;
+}
+@mixin event-none{
+	pointer-events: none;
+}
+@mixin alpha($v:1.0){
+	$ie_alpha: $v * 100;
+	$ie_filter_str: 'alpha(opacity=' + $ie_alpha + ')';
+	opacity: $v;
+	filter: alpha(opacity=$ie_alpha);
+	-ms-filter: $ie_filter_str;
+}
+@mixin alpha-must($v:1.0){
+	$ie_alpha: $v * 100;
+	$ie_filter_str: 'alpha(opacity=' + $ie_alpha + ')';
+	opacity: $v !important;
+	filter: alpha(opacity=$ie_alpha) !important;
+	-ms-filter: $ie_filter_str !important;
+}
+
+@mixin font-en{
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 400;
+}
+@mixin font-en-bold{
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 700;
+}
+@mixin font-mix{
+	font-family: 'Montserrat', Arial, "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
+	font-weight: 400;
+}
+//hiding text
+@mixin txtHide{
+	text-indent: -9999px;
+	white-space: nowrap;
+	overflow: hidden;
+	vertical-align: bottom;
+}
