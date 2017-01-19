@@ -144,6 +144,89 @@
 	})();
 window.util = Util;
 })();
+
+(function(){
+	const loader = (() => {
+		let _ = {};
+		let loader;
+
+		_.initPreLoader = (callback) => {
+			const images = document.getElementsByTagName('img');
+			const images_bg = document.getElementsByClassName('preload');
+
+			loader = null;
+
+			let img_src_ary = [];
+			for (let i = images.length - 1; i >= 0; i--){
+				let _src = images[i].getAttribute('src');
+				img_src_ary.push(_src);
+			}
+			for (let i = images_bg.length - 1; i >= 0; i--){
+				let _src = images_bg[i].style["background-image"] || getComputedStyle(images_bg[i], "")["background-image"];
+				_src = _src.replace(/^url\(|\"|\)$/g, '');
+				if (_src !== 'none') img_src_ary.push(_src);
+			}
+			_.imgLoadWatcher({
+				images: img_src_ary,
+				onComplete: () => {
+					callback();
+				}
+			});
+		};
+
+		_.imgLoadWatcher = ( function() {
+			const imgLoadWatcher = options => {
+				const setting = util.extend({
+					images  : null,
+					onEach  : null,
+					onComplete : null
+				}, options);
+				// if images is empty, go to loaded Function
+				if(setting.images === null || setting.images.length <= 0) {
+					if (setting.onComplete) {
+						setTimeout(() => {
+							setting.onComplete();
+						}, 500);
+					}
+					return;
+				}
+				//画像の数だけloadListenerが呼ばれたらcallbackが呼ばれる;
+				const loadListener = ((expectedCount, onEach, onComplete) => {
+					let receivedCount = 0;
+					return (e) => {
+						// remove temporary image
+						const tgt = e.target;
+						if (tgt) tgt.parentNode.removeChild(tgt);
+
+						receivedCount++;
+						if (onEach) onEach();
+						if(receivedCount === expectedCount) {
+							if (onComplete) {
+								setTimeout(() => {
+									onComplete();
+								}, 500);
+							}
+						}
+					};
+				})(setting.images.length, setting.onEach, setting.onComplete);
+
+				[].forEach.call(setting.images, url => {
+					let img = new Image;
+					document.body.appendChild(img);
+					img.width = img.height = 1;
+					img.onload = loadListener.bind(img);
+					img.src = url;
+					img = null;
+				});
+			};
+			return imgLoadWatcher;
+		}());
+
+		return _;
+	})();
+window.loader = loader;
+})();
+
 if (!Array.prototype.forEach) {
 	Array.prototype.forEach = function(callback, thisArg) {
 
