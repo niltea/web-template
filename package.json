@@ -11,26 +11,18 @@
     "commander": "^2.9.0",
     "css-loader": "^0.28.1",
     "extract-text-webpack-plugin": "^2.1.0",
-    "lite-server": "^2.3.0",
     "postcss-loader": "^2.0.5",
     "pug": "^2.0.0-rc.1",
     "pug-cli": "https://github.com/pugjs/pug-cli.git",
     "sass-loader": "^6.0.5",
     "style-loader": "^0.17.0",
     "url-loader": "^0.5.8",
-    "watch": "^1.0.2",
     "webpack": "^2.5.1"
   },
   "devDependencies": {
     "browser-sync": "^2.13.0",
-    "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^3.1.0",
-    "gulp-babel": "^6.1.2",
-    "gulp-ejs": "^2.1.2",
-    "gulp-plumber": "^1.1.0",
-    "gulp-pug": "^3.0.4",
-    "gulp-sass": "^2.3.1",
-    "gulp-uglify": "^1.5.4"
+    "lite-server": "^2.3.0",
+    "watch": "^1.0.2"
   },
   "scripts": {
     "pug": "pug src/pug/ --hierarchy -o public -P",
