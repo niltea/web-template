@@ -76,7 +76,19 @@
 
 		Util.hasClass = (elm, classNS) => {
 			if(!elm || !classNS) return false;
-			return (' ' + elm.className + ' ').replace(/[\n\t]/g, ' ').indexOf(' ' + classNS + ' ') !== -1;
+			const classList = elm.className.split(' ');
+			if (typeof classNS === 'string') {
+				return classList.indexOf(classNS) !== -1;
+			} else if (classNS instanceof Array) {
+				let r = false;
+				classNS.forEach(cn => {
+					if (classList.indexOf(cn) !== -1 || r === true) {
+						r = true;
+						return;
+					}
+				});
+				return r;
+			} else { return false; }
 		};
 
 		/**
