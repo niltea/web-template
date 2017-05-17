@@ -1,13 +1,18 @@
 # Web template
 
 Web開発用基本テンプレートです。  
-gulpでいい感じになるように環境を整備してみようという感じ。
+gulpやめました。
+
+npm script + Webpackでいい感じになるように環境を整備してみようという感じ。
+
 
 ## 具体的には何してんの
 
-* CSS: sass
 * HTML: pug
-* JS: uglify
+* CSS: sass(webpack)
+* JS: Babel(ES6) -> webpack
 
-でcompileなりcompressなりしてもらう感じです。
-そしたらbrowser-syncでガンガン自動リロードしてくれる感じ。
+でcompileしたりしてもらう。
+特にJSはモジュール別けてWebpackでまとめたりする想定。
+
+watchしてファイル編集したらbrowser-syncでガンガン自動リロードしてくれる感じで。
